@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brown Intro Math</title>
+</head>
+<body>
+    {% for topic in topics %}
+        <h4>{{ topic.description }}</h4>
+        <table>
+            <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/Week</td><td>Difficulty</td><td>Notes</td></thead>
+            {% for course in topic.courses %}
+            <tr>
+                <td><a href="{{ course.code }}">{{ course.code }}</a></td>
+                <td><a href="{{ course.critical_review }}">Link</a></td>
+                <td><a href="{{ course.old_syllabus }}">Link</a></td>
+                <td>{{ course.hours }} hours</td>
+                <td>{{ course.difficulty }}</td>
+                <td>{{ course.notes }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+</body>
+</html>
