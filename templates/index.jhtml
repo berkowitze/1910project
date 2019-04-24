@@ -14,7 +14,7 @@
                 <td><a href="{{ course.critical_review }}">Link</a></td>
                 <td><a href="{{ course.old_syllabus }}">Link</a></td>
                 <td>{{ course.hours }} hours</td>
-                <td>{{ course.difficulty }}</td>
+                <td>{{ course.difficulty }}</td> 
                 <td>{{ course.notes }}</td>
             </tr>
             {% endfor %}
