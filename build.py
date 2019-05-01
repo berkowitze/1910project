@@ -1,9 +1,10 @@
 import random
 import csv
 import os
+import json
 from jinja2 import Environment, FileSystemLoader, exceptions
 from dataclasses import dataclass
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple
 from collections import defaultdict
 
 env = Environment(loader=FileSystemLoader('templates'))
@@ -35,12 +36,17 @@ class Course:
             pass
 
 
-topics: Dict[str, List[Course]] = defaultdict(list)
+topics: Dict[str, Tuple[str, List[Course]]] = {}
+topic_descrs = json.load(open('topics.json'))
 for line in csv.DictReader(open('courses.csv')):
+    topic = line['Topic']
+    if topic not in topics:
+        topics[topic] = (topic_descrs[topic], [])
+
     course = Course(line['Course'], line['CriticalReview'],
                     line['Hours'],
                     int(line['Difficulty']), line['Notes'])
-    topics[line['Topic']].append(course)
+    topics[topic][1].append(course)
 
 
 def compile():
@@ -50,7 +56,8 @@ def compile():
         f.write(rendered_template)
 
     for topic in topics:
-        for course in topics[topic]:
+        descr, courses = topics[topic]
+        for course in courses:
             t = course.template.render(course=course)
             with open(course.link, 'w') as f:
                 f.write(t)
@@ -60,7 +67,8 @@ def write_empty_files():
     # assert False, 'u sure tho, overwrites'
     base_template = open('templates/base.html').read()
     for topic in topics:
-        for course in topics[topic]:
+        descr, courses = topics[topic]
+        for course in courses:
             with open(course.template_link, 'w') as f:
                 f.write(base_template)
 
