@@ -68,6 +68,6 @@ def write_empty_files():
 
 
 if __name__ == '__main__':
-    write_empty_files()
+    # write_empty_files()
     compile()
     print('recompiled')
