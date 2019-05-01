@@ -1,12 +1,12 @@
 Topic,Course,CriticalReview,Hours,Difficulty,Notes
 Introductory Math,Math 0050,https://thecriticalreview.org/search/MATH/0050/Fall-2012,5.14-7.86,3,Intro to math for non-STEM concentrators
 Calculus I,Math 0060,https://thecriticalreview.org/search/MATH/0050/Fall-2012,,3,Math 0050 prereq. Counts as prereq for Math 0100.
-Calculus I,Math 0070,https://thecriticalreview.org/search/MATH/0070,,0,For non-science concentrators. Does not count as prereq for Calc II.
+Calculus I,Math 0070,https://thecriticalreview.org/search/MATH/0070,,3,For non-science concentrators. Does not count as prereq for Calc II.
 Calculus I,Math 0090,https://thecriticalreview.org/search/MATH/0090/Spring-2018,3.83-4.92,3, Intro to Calculus I
 Calculus II,Math 0100,https://thecriticalreview.org/search/MATH/0100/Fall-2017,4.00-5.65,4,Intro to Calculus II for non-engineering students
 Calculus II,Math 0190,https://thecriticalreview.org/search/MATH/0190/Fall-2016,7.65-12.11,4, Intro to Calculus II for engineering students
-Calculus III,Math 0180,https://thecriticalreview.org/search/MATH/0180/Spring-2018,5.92-10.69,5, Intro to Calculus III for non-engineering students
-Calculus III,Math 0200,https://thecriticalreview.org/search/MATH/0180/Spring-2018,5.46-9.46,5, Intro to Calculus III for engineering students
+Calculus III,Math 0180,https://thecriticalreview.org/search/MATH/0180/Spring-2018,5.92-10.69,4, Intro to Calculus III for non-engineering students
+Calculus III,Math 0200,https://thecriticalreview.org/search/MATH/0180/Spring-2018,5.46-9.46,4, Intro to Calculus III for engineering students
 Calculus III,Math 0350,https://thecriticalreview.org/search/MATH/0180/Spring-2018,10.58-16.83,5, Honors Intro to Calculus III for pure mathematics concentrators
 Linear Algebra,MATH 0520,https://thecriticalreview.org/search/MATH/0520,5.50-8.63,2,Computation Based.
 Linear Algebra,Math 0540,https://thecriticalreview.org/search/MATH/0540,6.13-9.17,3,Proof Based.
