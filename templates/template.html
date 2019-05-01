@@ -5,6 +5,10 @@
     {% include "course-header.html" %}
 </head>
 <body>
-   {% block content %}{% endblock %}
+   <div class='container row'>
+    <div class='card col s12 col m12'>
+    <h4>{{ course.code }}</h4>
+     {% block content %}{% endblock %}
+   </div></div>
 </body>
 </html>

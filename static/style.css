@@ -5,3 +5,23 @@ td {
 table {
     border-collapse: collapse;
 }
+
+.card {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+.collapsible-header:hover {
+    background-color: #f2f2f2;
+    transition: background-color 1s;
+}
+
+.collapsible-header {
+    transition: background-color 1s;
+    padding-top: .6em !important;
+    padding-bottom: .6em !important;
+}
+
+thead td {
+    font-weight: bold;
+}

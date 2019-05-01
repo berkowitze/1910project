@@ -17,11 +17,11 @@ class Course:
     critical_review: str
     old_syllabus: str
     hours: str
-    difficulty_numb: int
+    diff_n: int
     notes: str
 
     def __post_init__(self):
-        self.difficulty = [random.choice(arms) for _ in range(self.difficulty_numb)]
+        self.difficulty = [random.choice(arms) for _ in range(self.diff_n)]
         min_name = self.code.replace(' ', '').lower()
         self.link = f"courses/{min_name}.html"
         self.template_link = f"templates/{min_name}.jhtml"
@@ -51,11 +51,9 @@ def compile():
             with open(course.link, 'w') as f:
                 f.write(t)
 
-    print('recompiled')
-
 
 def write_empty_files():
-    # assert False, 'u sure tho'
+    # assert False, 'u sure tho, overwrites'
     base_template = open('templates/base.html').read()
     for topic in topics:
         for course in topics[topic]:
@@ -64,9 +62,8 @@ def write_empty_files():
 
             course.__post_init__()
 
-    print('written')
-
 
 if __name__ == '__main__':
-    write_empty_files()
+    # write_empty_files()
     compile()
+    print('recompiled')

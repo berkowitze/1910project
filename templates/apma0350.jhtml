@@ -1,5 +1,7 @@
 {% extends "template.html" %}
 {% block title %}{{ course.code }}{% endblock %}
 {% block content %}
+
 <p>hi</p>
+
 {% endblock %}
