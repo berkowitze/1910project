@@ -41,7 +41,8 @@ topic_descrs = json.load(open('topics.json'))
 for line in csv.DictReader(open('courses.csv')):
     topic = line['Topic']
     if topic not in topics:
-        topics[topic] = (topic_descrs[topic], [])
+        raw_descr = topic_descrs[topic]
+        topics[topic] = ('<br/>'.join(raw_descr.split('\n')), [])
 
     course = Course(line['Course'], line['CriticalReview'],
                     line['Hours'],
