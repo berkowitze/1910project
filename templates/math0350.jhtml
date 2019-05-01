@@ -2,6 +2,6 @@
 {% block title %}{{ course.code }}{% endblock %}
 {% block content %}
 
-<p>hi</p>
+<p>This class is meant for students of greater talent and ambition inclined towards a purer form of mathematics over applied mathematics. It covers the same topics as MATH 0180/0200 but includes the teaching and testing of proofs of theorems that are not a part of the other calculus III courses.</p>
 
 {% endblock %}
