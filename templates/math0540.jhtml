@@ -2,8 +2,6 @@
 {% block title %}{{ course.code }}{% endblock %}
 {% block content %}
 
-<p><strong>Prerequisites:</strong>Math 0100 is recommended.</p>
-
-<p>TODO: Why this over 520</p>
+<p>hi</p>
 
 {% endblock %}

@@ -27,13 +27,13 @@
         <div class='collapsible-header'><h6>{{ topicKey }}</h6></div>
         <div class='collapsible-body'>
             <table>
-            <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/Week</td><td>Difficulty</td><td>Notes</td></thead>
+            <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/wk (min, max)</td><td>Relative Difficulty</td><td>Notes</td></thead>
             {% for course in topics[topicKey] %}
             <tr>
                 <td><a href="{{ course.link }}">{{ course.code }}</a></td>
                 <td><a href="{{ course.critical_review }}">Link</a></td>
-                <td><a href="{{ course.old_syllabus }}">Link</a></td>
-                <td>{{ course.hours }} hours</td>
+                <td><a href="{{ course.syllabus_link }}">Link</a></td>
+                <td>{{ course.hours }}</td>
                 <td>{% for arm in course.difficulty %} {{ arm }} {% endfor %}</td> 
                 <td>{{ course.notes }}</td>
             </tr>

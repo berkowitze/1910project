@@ -1,8 +1,9 @@
 import random
 import csv
+import os
 from jinja2 import Environment, FileSystemLoader, exceptions
 from dataclasses import dataclass
-from typing import List, Dict
+from typing import List, Dict, Optional
 from collections import defaultdict
 
 env = Environment(loader=FileSystemLoader('templates'))
@@ -15,7 +16,6 @@ arms = ["💪"]  # #  , "💪🏿", "💪🏼", "💪🏽", "💪🏾"]
 class Course:
     code: str
     critical_review: str
-    old_syllabus: str
     hours: str
     diff_n: int
     notes: str
@@ -23,6 +23,10 @@ class Course:
     def __post_init__(self):
         self.difficulty = [random.choice(arms) for _ in range(self.diff_n)]
         min_name = self.code.replace(' ', '').lower()
+        self.syllabus_link: Optional[str] = f'syllabi/{min_name}.pdf'
+        if not os.path.exists(self.syllabus_link):
+            self.syllabus_link = None
+
         self.link = f"courses/{min_name}.html"
         self.template_link = f"templates/{min_name}.jhtml"
         try:
@@ -34,7 +38,7 @@ class Course:
 topics: Dict[str, List[Course]] = defaultdict(list)
 for line in csv.DictReader(open('courses.csv')):
     course = Course(line['Course'], line['CriticalReview'],
-                    line['Syllabus'], line['Hours'],
+                    line['Hours'],
                     int(line['Difficulty']), line['Notes'])
     topics[line['Topic']].append(course)
 
@@ -64,6 +68,6 @@ def write_empty_files():
 
 
 if __name__ == '__main__':
-    # write_empty_files()
+    write_empty_files()
     compile()
     print('recompiled')
