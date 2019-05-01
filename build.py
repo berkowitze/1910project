@@ -17,11 +17,11 @@ class Course:
     critical_review: str
     old_syllabus: str
     hours: str
-    difficulty: int
+    difficulty_numb: int
     notes: str
 
     def __post_init__(self):
-        self.difficulty = [random.choice(arms) for _ in range(self.difficulty)]
+        self.difficulty = [random.choice(arms) for _ in range(self.difficulty_numb)]
         min_name = self.code.replace(' ', '').lower()
         self.link = f"courses/{min_name}.html"
         self.template_link = f"templates/{min_name}.jhtml"
@@ -68,5 +68,5 @@ def write_empty_files():
 
 
 if __name__ == '__main__':
-    # write_empty_files()
+    write_empty_files()
     compile()

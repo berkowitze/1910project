@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Brown Intro Math</title>
-    {% include "header.html" %}
+    {% include "main-header.html" %}
 </head>
 <body>
     <div class='container'>
