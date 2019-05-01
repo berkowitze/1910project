@@ -2,23 +2,40 @@
 <html>
 <head>
     <title>Brown Intro Math</title>
+    {% include "header.html" %}
 </head>
 <body>
-    {% for topic in topics %}
-        <h4>{{ topic.description }}</h4>
-        <table>
+    <div class='container'>
+    <h3>Intro Math Courses at Brown</h3>
+    <ul class='collapsible'>
+    {% for topicKey in topics %}
+    <li>
+        <div class='collapsible-header'>{{ topicKey }}</div>
+        <div class='collapsible-body'>
+            <table>
             <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/Week</td><td>Difficulty</td><td>Notes</td></thead>
-            {% for course in topic.courses %}
+            {% for course in topics[topicKey] %}
             <tr>
-                <td><a href="{{ course.code }}">{{ course.code }}</a></td>
+                <td><a href="{{ course.link }}">{{ course.code }}</a></td>
                 <td><a href="{{ course.critical_review }}">Link</a></td>
                 <td><a href="{{ course.old_syllabus }}">Link</a></td>
                 <td>{{ course.hours }} hours</td>
-                <td>{{ course.difficulty }}</td> 
+                <td>{% for arm in course.difficulty %} {{ arm }} {% endfor %}</td> 
                 <td>{{ course.notes }}</td>
             </tr>
             {% endfor %}
         </table>
+        </div>
+    </li>
     {% endfor %}
+    </ul>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+  });
+
+</script>
+
 </body>
 </html>
