@@ -2,9 +2,9 @@
 {% block title %}{{ course.code }}{% endblock %}
 {% block content %}
 
-<p>Your first college-level introduction to the world of calculus III, taken by most students as a concentration requirement. An upper level class that introduces students to high level three dimensional coordinate systems, partial derivatives and their applications (including optimization and LaGrange multipliers), multiple integrals which include iterated, double and triple integrals in polar, spherical and cylindrical coordinates, line integrals, vector fields, and surface integrals including Green’s Theorem and Stoke’s Theorem. Pre-requisites for this class include a calculus II college-level course like MATH 0100 or MATH 0190, high-school Calculus BC, or an A Level mathematics examination grade.
+<p>Your first college-level introduction to the world of calculus III, taken by most students as a concentration requirement. An upper level class that introduces students to high level three dimensional coordinate systems, partial derivatives and their applications (including optimization and LaGrange multipliers), multiple integrals which include iterated, double and triple integrals in polar, spherical and cylindrical coordinates, line integrals, vector fields, and surface integrals including Green’s Theorem and Stoke’s Theorem. Pre-requisites for this class include a calculus II college-level course like MATH 0100 or MATH 0190, high-school Calculus BC, or an A Level mathematics examination grade.</p>
 
-Note: You do not need to have covered topics the likes of sequences and series in your calculus II course to do well in MATH 0180, as you do not learn these topics in a calculus III class.
+<p><strong>Note:</strong> You do not need to have covered topics the likes of sequences and series in your calculus II course to do well in MATH 0180, as you do not learn these topics in a calculus III class.
 </p>
 
 {% endblock %}
