@@ -4,6 +4,6 @@
 
 <p> Pre-reqs: MATH 520/540 must be taken before, or congruently, with this class </p>
 <br>
-<p> Students taking APMA 350 should have a fairly good grasp of multivariate calculus. While Linear Algebra can be taken congruently, it helps to come into the class with pre-existing knowledge of linear algebra.</p>
+<p> Students taking APMA 350 should have a fairly good grasp of multivariate calculus. While Linear Algebra can bhie taken congruently, it helps to come into the class with pre-existing knowledge of linear algebra.</p>
 
 {% endblock %}
