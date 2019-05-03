@@ -36,9 +36,9 @@ class Course:
 class Topic:
     def __init__(self, name: str) -> None:
         self.name: str = name
-        mini_name = self.name.replace(' ', '').lower()
+        self.mini_name = self.name.replace(' ', '').lower()
         self.courses: List[Course] = []
-        self.content_link = f"topics/{mini_name}.jhtml"
+        self.content_link = f"topics/{self.mini_name}.jhtml"
 
 
 topics: Dict[str, Topic] = {}

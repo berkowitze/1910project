@@ -4,6 +4,7 @@
     <title>Brown Intro Math</title>
     <link rel="stylesheet" type="text/css" href="static/mobile_style.css">
     <link rel="icon" type="image/png" href="static/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="static/jquery.js"></script>
 </head>
 <body>
@@ -19,27 +20,32 @@
             </ul>
         </p>
     </div>
-    <h5>List of Intro Courses</h5>
-    <h6>Click the links for more info!</h6>
+    <h5>Topics (tap to scroll to that topic)</h5>
+    <ul>
+        {% for topicKey in topics %}
+        <li><a href="#{{ topics[topicKey].mini_name }}">{{ topicKey }}</a></li>
+        {% endfor %}
+    </ul>
+    <h3>List of Intro Courses</h3>
+    <h5>Click the links for more info!</h5>
     <ul class='collapsible'>
     {% for topicKey in topics %}
-    <li>
-        <div class='collapsible-header'><h5>{{ topicKey }}</h5></div>
+    <li id="{{ topics[topicKey].mini_name }}">
+        <div class='collapsible-header'><h4>{{ topicKey }}</h4></div>
+        <hr/>
         <div class='collapsible-body'>
-            <table>
-            <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/wk (avg-max)</td><td>Relative Difficulty</td><td>Notes</td></thead>
             {% for course in topics[topicKey].courses %}
-            <tr>
-                <td><a href="{{ course.link }}">{{ course.code }}</a></td>
-                <td><a href="{{ course.critical_review }}">Link</a></td>
-                <td><a href="{{ course.syllabus_link }}">Link</a></td>
-                <td>{{ course.hours }}</td>
-                <td>{% for arm in course.difficulty %} {{ arm }} {% endfor %}</td> 
-                <td>{{ course.notes }}</td>
-            </tr>
+            <ul>
+                <li><strong>Course</strong>: <a href="{{ course.link }}">{{ course.code }}</a></li>
+                <li><strong>Critical Review</strong>: <a href="{{ course.critical_review }}">Link</a></li>
+                <li><strong>Old Syllabus</strong>: <a href="{{ course.syllabus_link }}">Link</a></li>
+                <li><strong>Hours/wk (avg-max)</strong>: {{ course.hours }}</li>
+                <li><strong>Difficulty</strong>: {% for arm in course.difficulty %} {{ arm }} {% endfor %}</li>
+                <li><strong>Notes</strong>: {{ course.notes }}</li>
+            </ul>
+            <hr/>
             {% endfor %}
-        </table>
-        <p>{{ topics[topicKey].descr }}</p>
+        <div class='topic-description'>{% include topics[topicKey].content_link %}</div>
         </div>
     </li>
     {% endfor %}
