@@ -1,7 +1,0 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
-<p>Most students opting for this class are non-concentrators in the math department, but most students taking the class took it as a requirement for their concentration, as this intro to calculus I serves as an important requirement for a large number of science and mathematics majors. Topics pertain to those that encompass calc I and include limits, derivation (including the chain, quotient and product rules) and its applications (including maxima and minima), and integration and its applications (including areas under curves and volumes of revolution). This class is intended for students with helpful Calculus AB background experience but little Calculus BC experience. Good foundations in trigonometry and precalculus also serve to be helpful for success in this course.</p>
-
-{% endblock %}

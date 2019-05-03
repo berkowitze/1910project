@@ -1,8 +1,2 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
 <p>Pre-reqs: MATH 100 or equivalent is necessary for this class; A basic understanding of Calc II is necessary for this class. 
 </p>
-
-{% endblock %}

@@ -10,31 +10,27 @@ from collections import defaultdict
 env = Environment(loader=FileSystemLoader('templates'))
 template = env.get_template('index.jhtml')
 mobile = env.get_template('mobile.jhtml')
+course_template = env.get_template('course.jhtml')
 
-arms = ["💪"]  # #  , "💪🏿", "💪🏼", "💪🏽", "💪🏾"]
 
-
-@dataclass
 class Course:
-    code: str
-    critical_review: str
-    hours: str
-    diff_n: int
-    notes: str
-
-    def __post_init__(self):
-        self.difficulty = [random.choice(arms) for _ in range(self.diff_n)]
+    def __init__(self, code: str, cr: str,
+                 hours: str, difficulty: int, notes: str) -> None:
+        self.code: str = code
         min_name = self.code.replace(' ', '').lower()
+
+        self.critical_review: str = cr
+        self.hours: str = hours
+        self.diff_n: int = difficulty
+        self.notes: str = notes
+        self.difficulty = ["💪" for _ in range(self.diff_n)]
+
         self.syllabus_link: Optional[str] = f'syllabi/{min_name}.pdf'
         if not os.path.exists(self.syllabus_link):
             self.syllabus_link = None
 
         self.link = f"courses/{min_name}.html"
-        self.template_link = f"templates/{min_name}.jhtml"
-        try:
-            self.template = env.get_template(f'{min_name}.jhtml')
-        except exceptions.TemplateNotFound:
-            pass
+        self.content_link = f"content/{min_name}.jhtml"
 
 
 topics: Dict[str, Tuple[str, List[Course]]] = {}
@@ -64,24 +60,11 @@ def compile():
     for topic in topics:
         descr, courses = topics[topic]
         for course in courses:
-            t = course.template.render(course=course)
+            t = course_template.render(course=course)
             with open(course.link, 'w') as f:
                 f.write(t)
 
 
-def write_empty_files():
-    # assert False, 'u sure tho, overwrites'
-    base_template = open('templates/base.html').read()
-    for topic in topics:
-        descr, courses = topics[topic]
-        for course in courses:
-            with open(course.template_link, 'w') as f:
-                f.write(base_template)
-
-            course.__post_init__()
-
-
 if __name__ == '__main__':
-    # write_empty_files()
     compile()
     print('recompiled')

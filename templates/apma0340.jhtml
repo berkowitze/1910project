@@ -1,7 +1,0 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
-<p>This is the second in the APMA 330/340 sequences. This class is intended for non-APMA concentrators and provides a cursory understanding of PDEs.</p>
-
-{% endblock %}

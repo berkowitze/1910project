@@ -1,7 +1,0 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
-<p>The second sequence to MATH 0050 offered in the spring semester. This course prepares students wishing for a more slower-paced introduction to calculus for MATH 0090, and offers very similar topics to MATH 0090 along with a review of precalculus. </p>
-
-{% endblock %}

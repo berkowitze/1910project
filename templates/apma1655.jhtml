@@ -1,7 +1,0 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
-<p>See APMA 1650. This is a slightly more rigorous version of APMA 1650. It involves more theory, and slightly more challenging problem sets. Taking 1655 is not required for any concentration. It is simply an option if you want to delve deeper into the material. </p>
-
-{% endblock %}

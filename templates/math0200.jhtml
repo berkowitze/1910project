@@ -1,7 +1,0 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
-<p>Essentially the same as MATH 0180 but tailored to cater to the needs of those students inclined towards pursuing a physics or engineering degree. This class thus includes more applications to the worlds of physics and engineering than does MATH 0180.</p>
-
-{% endblock %}

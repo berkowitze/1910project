@@ -1,7 +1,1 @@
-{% extends "template.html" %}
-{% block title %}{{ course.code }}{% endblock %}
-{% block content %}
-
 <p>APMA 330 is intended for people who do not want to be APMA concentrators, namely engineers. The APMA departments recommends linear algebra be taken congruently with this class.</p>
-
-{% endblock %}
