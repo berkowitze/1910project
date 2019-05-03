@@ -4,4 +4,7 @@
 
 {% include course.content_link %}
 
+<p><strong>Old syllabus</strong>: <a href="../{{ course.syllabus_link }}">Link</a></p>
+<p><strong>Critical review</strong>: <a href="{{ course.critical_review }}">Link</a></p>
+
 {% endblock %}
