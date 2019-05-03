@@ -1,1 +1,10 @@
 <p>The Applied Mathematics concentration and its affiliates (e.g., APMA-CS, APMA-ECON) all strongly recommend students take the 350/360 track instead of the 330/340 track. The later is intended for students who need knowledge of ODEs/PDEs, but do not necessarily intend to explore the topic much deeper in the future. For example, many engineers take this sequence. While we strongly recommend intended APMA concentrators take the 350/360 sequence because later classes build on the subject matter, this may be less important for dual concentrators. For example, there are many high-level APMA-ECON classes that do not require these as a prerequisite.</p>
+
+<p>To take an ODE course, you should be comfortable with the following topics:</p>
+
+<ul>
+    <li>Derivatives. In particular, the chain rule is very useful in differential equations.</li>
+    <li>Integration. In particular, integration by substitution and by parts. You should be comfortable with most of the integrals discussed on <a href="https://www.youtube.com/watch?v=dh__n9FVKA0&list=PLVwvyzz17cDI9d-P8FN69xr2zDz4bSuHF">this playlist</a>.</li>
+    <li>Partial Fraction Decomposition. <a href="https://www.youtube.com/watch?v=HZTv4zCgEnA">Short video (patrickJMT)</a>, <a href="https://www.youtube.com/watch?v=BvGKVn-85jM">Long video (organic chemistry tutor)</a></li>
+    <li>Some trig identities and basic trig integration.</li>
+</ul>
