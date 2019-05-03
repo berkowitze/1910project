@@ -1,3 +1,5 @@
-<p>Partial Differential Equations deal with the study of differential equations in multiple dimensions. For example, you might look at how heat evolves on a sheet of metal where one corner is being heated.</p>
+<p>See the ODE section for more on which PDE course you should take.</p>
 
-<p>See the ODE section for more on which you should take.</p>
+<p>Partial Differential Equations deal with the study of differential equations in multiple dimensions. For example, you might look at how heat evolves on a sheet of metal where one corner is being heated. For examples of PDEs and relevant applications, see <a href="http://mathworld.wolfram.com/PartialDifferentialEquation.html">Wolfram’s guide</a>.</p>
+
+<p>To take a PDE course, you should have a solid grounding in calculus, ordinary differential equations and linear algebra. Be comfortable with matrix operations, finding determinants of matrices, matrix equations, matrix inversion, and matrix transposition. Review <a href="http://mathworld.wolfram.com/Matrix.html">here</a>!</p>
