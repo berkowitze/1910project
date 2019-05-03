@@ -33,13 +33,11 @@ class Course:
         self.content_link = f"content/{min_name}.jhtml"
 
 
-@dataclass
 class Topic:
-    name: str
-    courses: List[Course]
-
-    def __post_init__(self):
+    def __init__(self, name: str) -> None:
+        self.name: str = name
         mini_name = self.name.replace(' ', '').lower()
+        self.courses: List[Course] = []
         self.content_link = f"topics/{mini_name}.jhtml"
 
 
@@ -47,7 +45,7 @@ topics: Dict[str, Topic] = {}
 for line in csv.DictReader(open('courses.csv')):
     topic_name = line['Topic']
     if topic_name not in topics:
-        topics[topic_name] = Topic(topic_name, [])
+        topics[topic_name] = Topic(topic_name)
 
     course = Course(line['Course'], line['CriticalReview'],
                     line['Hours'],
