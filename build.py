@@ -9,6 +9,7 @@ from collections import defaultdict
 
 env = Environment(loader=FileSystemLoader('templates'))
 template = env.get_template('index.jhtml')
+mobile = env.get_template('mobile.jhtml')
 
 arms = ["💪"]  # #  , "💪🏿", "💪🏼", "💪🏽", "💪🏾"]
 
@@ -51,10 +52,14 @@ for line in csv.DictReader(open('courses.csv')):
 
 
 def compile():
-    rendered_template = template.render(topics=topics)
+    rendered_index = template.render(topics=topics)
+    rendered_mobile = mobile.render(topics=topics)
 
     with open('index.html', 'w') as f:
-        f.write(rendered_template)
+        f.write(rendered_index)
+
+    with open('mobile.html', 'w') as f:
+        f.write(rendered_mobile)
 
     for topic in topics:
         descr, courses = topics[topic]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brown Intro Math</title>
+    <link rel="stylesheet" type="text/css" href="static/mobile_style.css">
+    <link rel="icon" type="image/png" href="static/favicon-32x32.png">
+    <script src="static/jquery.js"></script>
+</head>
+<body>
+    <h3>Intro Math Courses at Brown</h3>
+    <div class='intro'>
+        <p>There are dozens of introductory level math and applied math courses at Brown. Figuring out which ones you're qualified for and deciding which one to take can be extremely frustrating. Hopefully this site can help you figure out what to take!</p>
+        <p>Keep in mind that you can take most courses without the formal prerequisites, as long as you get the permission of the instructor (just send them an email before reading period is over!).</p>
+        <p>There are some subtopics that these courses rely upon that you did not learn in your high school calculus course. This does not always mean you should not be in that course! Some things you can do in this situation are:
+            <ul class='browser-default'>
+                <li>Email the professor asking how important the material is to learn</li>
+                <li>Learn the subtopic on your own, using a resource like <a href="https://youtube.com/">Youtube</a>, <a href="https://www.khanacademy.org/">Khan Academy</a>, or a textbook.</li>
+                <li>Ask a friend for help! A lot of Brown students have taken a few calc/linear algebra courses and are hopefully willing to help you through hard spots.</li>
+            </ul>
+        </p>
+    </div>
+    <h5>List of Intro Courses</h5>
+    <h6>Click the links for more info!</h6>
+    <ul class='collapsible'>
+    {% for topicKey in topics %}
+    <li>
+        <div class='collapsible-header'><h5>{{ topicKey }}</h5></div>
+        <div class='collapsible-body'>
+            <table>
+            <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/wk (avg-max)</td><td>Relative Difficulty</td><td>Notes</td></thead>
+            {% for course in topics[topicKey][1] %}
+            <tr>
+                <td><a href="{{ course.link }}">{{ course.code }}</a></td>
+                <td><a href="{{ course.critical_review }}">Link</a></td>
+                <td><a href="{{ course.syllabus_link }}">Link</a></td>
+                <td>{{ course.hours }}</td>
+                <td>{% for arm in course.difficulty %} {{ arm }} {% endfor %}</td> 
+                <td>{{ course.notes }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>{{ topics[topicKey][0] }}</p>
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+</div>
+
+</body>
+</html>
