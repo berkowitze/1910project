@@ -26,7 +26,7 @@ class Course:
         self.difficulty = ["💪" for _ in range(self.diff_n)]
 
         self.syllabus_link: Optional[str] = f'syllabi/{min_name}.pdf'
-        if not os.path.exists(self.syllabus_link):
+        if not os.path.exists(f'out/{self.syllabus_link}'):
             self.syllabus_link = None
 
         self.link = f"courses/{min_name}.html"
@@ -57,16 +57,16 @@ def compile():
     rendered_index = template.render(topics=topics)
     rendered_mobile = mobile.render(topics=topics)
 
-    with open('index.html', 'w') as f:
+    with open('out/index.html', 'w') as f:
         f.write(rendered_index)
 
-    with open('mobile.html', 'w') as f:
+    with open('out/mobile.html', 'w') as f:
         f.write(rendered_mobile)
 
     for topic in topics:
         for course in topics[topic].courses:
             t = course_template.render(course=course)
-            with open(course.link, 'w') as f:
+            with open(f'out/{course.link}', 'w') as f:
                 f.write(t)
 
 
