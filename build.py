@@ -33,18 +33,26 @@ class Course:
         self.content_link = f"content/{min_name}.jhtml"
 
 
-topics: Dict[str, Tuple[str, List[Course]]] = {}
-topic_descrs = json.load(open('topics.json'))
+@dataclass
+class Topic:
+    name: str
+    courses: List[Course]
+
+    def __post_init__(self):
+        mini_name = self.name.replace(' ', '').lower()
+        self.content_link = f"topics/{mini_name}.jhtml"
+
+
+topics: Dict[str, Topic] = {}
 for line in csv.DictReader(open('courses.csv')):
-    topic = line['Topic']
-    if topic not in topics:
-        raw_descr = topic_descrs[topic]
-        topics[topic] = ('<br/>'.join(raw_descr.split('\n')), [])
+    topic_name = line['Topic']
+    if topic_name not in topics:
+        topics[topic_name] = Topic(topic_name, [])
 
     course = Course(line['Course'], line['CriticalReview'],
                     line['Hours'],
                     int(line['Difficulty']), line['Notes'])
-    topics[topic][1].append(course)
+    topics[topic_name].courses.append(course)
 
 
 def compile():
@@ -58,8 +66,7 @@ def compile():
         f.write(rendered_mobile)
 
     for topic in topics:
-        descr, courses = topics[topic]
-        for course in courses:
+        for course in topics[topic].courses:
             t = course_template.render(course=course)
             with open(course.link, 'w') as f:
                 f.write(t)

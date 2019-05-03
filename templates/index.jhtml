@@ -28,7 +28,7 @@
         <div class='collapsible-body'>
             <table>
             <thead><td>Course</td><td>Critical Review</td><td>Old Syllabus</td><td>Hours/wk (avg-max)</td><td>Relative Difficulty</td><td>Notes</td></thead>
-            {% for course in topics[topicKey][1] %}
+            {% for course in topics[topicKey].courses %}
             <tr>
                 <td><a href="{{ course.link }}">{{ course.code }}</a></td>
                 <td><a href="{{ course.critical_review }}">Link</a></td>
@@ -39,7 +39,7 @@
             </tr>
             {% endfor %}
         </table>
-        <p>{{ topics[topicKey][0] }}</p>
+        {% include topics[topicKey].content_link %}
         </div>
     </li>
     {% endfor %}
