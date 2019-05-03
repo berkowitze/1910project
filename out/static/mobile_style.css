@@ -31,3 +31,7 @@ ul.collapsible > li {
     padding-left: 0;
     list-style: none;
 }
+
+a:visited {
+    color: #0000EE;
+}
